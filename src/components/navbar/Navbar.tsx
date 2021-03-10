@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Avatar from "../avatar/Avatar";
 import Searchbar from "../searchbar/Searchbar";
 import gh from "./assets/ghmarkW.png";
@@ -27,10 +28,18 @@ const Navbar: React.FC = () => {
   return (
     <Inner transparent={bgVisible}>
       <LeftWrapper>
-        <LinkLogo>MovieBox</LinkLogo>
-        <LinkItem>Startseite</LinkItem>
-        <LinkItem>Filme</LinkItem>
-        <LinkItem>Serien</LinkItem>
+        <Link to="/">
+          <LinkLogo>MovieBox</LinkLogo>
+        </Link>
+        <Link to="/">
+          <LinkItem>Startseite</LinkItem>
+        </Link>
+        <Link to="/movies">
+          <LinkItem>Filme</LinkItem>
+        </Link>
+        <Link to="/series">
+          <LinkItem>Serien</LinkItem>
+        </Link>
       </LeftWrapper>
       <MiddleWrapper>
         <Anchor href="#">

@@ -26,20 +26,59 @@ export const Icon = styled.div`
   color: white;
 `;
 
-export const Menu = styled.select`
-  positon: absolute;
-  right: 400px;
-  top: 200px;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: flex;
-  height: 600px;
-  width: 400px;
+export const MenuWrapper = styled.div`
+  position: absolute;
+  right: 20px;
+  top: 65px;
+  height: auto;
+  width: 20vmin;
+  background: transparent;
 `;
 
-export const Option = styled.option`
-  height: 5vh;
+export const Menu = styled.div`
+  position: absolute;
+  width: 20vmin;
+  display: flex;
+  flex-direction: column;
+  height: 20vmin;
+  background-color: rgba(0, 0, 0, 0.9);
+`;
+
+export const Line = styled.div`
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid white;
+`;
+
+export const MenuMe = styled.div`
+  height: 5vmin;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  flex-direction: row;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+`;
+
+export const Me = styled.img`
+  height: 3vmin;
+  width: 3vmin;
+  margin-right: 10px;
+`;
+
+export const MeDesc = styled.div`
+  color: white;
+  font-size: 1.7vmin;
+`;
+
+export const MenuItem = styled.div`
+  text-decoration: 0;
+  width: 100%;
+  font-size: 1.9vmin;
+  color: white;
+  display: flex;
+  padding: 5px;
+  margin-left: 5px;
 `;
