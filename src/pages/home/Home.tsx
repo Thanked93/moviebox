@@ -6,16 +6,15 @@ import { Request, requests } from "../../api/requests";
 import Banner from "../../components/banner/Banner";
 import Row from "../../components/row/Row";
 import { addEntry } from "../../store/movie/actions";
-import { MovieState } from "../../store/movie/movieReducer";
 import { Inner, MovieInner } from "./styles/styles";
 
 const Home = () => {
   const [error, setError] = useState<string>("");
   const [fetched, setFetched] = useState<boolean>(false);
   const [banner, setBanner] = useState<Movie | null>(null);
-  const entries = useSelector<MovieState, MovieState["entries"]>(
-    (state) => state.entries
-  );
+  const entries = useSelector<any, any>((state) => {
+    return state.movieReducer.entries;
+  });
 
   const dispatch = useDispatch();
 

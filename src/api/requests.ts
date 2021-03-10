@@ -82,3 +82,4 @@ export const requests = (lang: string) => {
   ];
 };
 export const SEARCH_MOVIE = `/search/movie?api_key=${KEY}`;
+export const SEARCH_TV = `/search/tv?api_key=${KEY}`;

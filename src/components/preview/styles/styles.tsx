@@ -1,29 +1,42 @@
 import styled from "styled-components";
 
-export const Inner = styled.div`
-  max-width: 13vw;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 5px;
-`;
-
 export const Image = styled.img`
-  max-width: 12vw;
-  max-height: 100%;
+  height: 30vmin;
+  width: 20vmin;
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 38vh;
-  width: 15vw;
-  background-color: #111;
-  border: 1px solid black;
-  cursor: pointer;
+  height: 30vmin;
+  width: 20vmin;
+  &:hover {
+    padding: 3px;
+    z-index: 10;
+    cursor: pointer;
+    width: 22vmin;
+    background-color: #222;
+    height: 38vmin;
+    display: flex;
+    justify-content: center;
+  }
+  &:hover ${Image} {
+    transform: height 0.5s;
+    height: 34vmin;
+    width: 22vmin;
+    widht: 100%;
+  }
 `;
 
-export const ButtonContent = styled.div``;
+export const Buttons = styled.div`
+  position: absolute;
+  display: flex;
+  justfiy-content: center;
+  bottom: 10px;
+`;
+
+export const Inner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+`;

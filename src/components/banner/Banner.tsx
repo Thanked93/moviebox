@@ -1,6 +1,8 @@
 import React from "react";
 import { Movie } from "../../api/interfaces/Movie";
 import Urls from "../../fixtures/Urls.json";
+import AddButton from "../addbutton/AddButton";
+import ShowButton from "../addbutton/ShowButton";
 import {
   Contents,
   Inner,
@@ -22,7 +24,10 @@ const Banner: React.FC<BannerProps> = ({ movie }) => {
       <Contents>
         <Title>{movie.title}</Title>
         <Overview>{movie.overview}</Overview>
-        <Buttons>hi</Buttons>
+        <Buttons>
+          <AddButton movie={movie} />
+          <ShowButton movie={movie} />
+        </Buttons>
       </Contents>
       <Fade />
     </Inner>

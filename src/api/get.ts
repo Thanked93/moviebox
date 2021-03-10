@@ -18,9 +18,9 @@ export async function get(
     .get(url)
     .then((res) => {
       const response: MovieResponse[] = res.data.results;
-
       response.forEach((m: MovieResponse) => {
         let item = parseResponse(m, query, extended);
+        console.log(item);
         if (item) items.push(item);
       });
       return { items };

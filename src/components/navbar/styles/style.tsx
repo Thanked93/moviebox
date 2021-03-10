@@ -43,7 +43,7 @@ export const RightWrapper = styled.div`
 export const LinkItem = styled.div`
   font-weight: 600;
   padding: 5px;
-  font-size: 1rem;
+  font-size: 1.5vmin;
   &:hover {
     cursor: pointer;
   }
@@ -52,7 +52,7 @@ export const LinkItem = styled.div`
 export const LinkLogo = styled.h1`
   padding: 8px;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 2vmin;
   &:hover {
     cursor: pointer;
   }

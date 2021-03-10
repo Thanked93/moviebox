@@ -7,7 +7,9 @@ export const Inner = styled.div<{ toggle: boolean }>`
   width: ${({ toggle }) => (toggle ? "60%" : "10%")};
   display: flex;
   align-items: center;
-  border: ${({ toggle }) => (toggle ? "1px solid white" : "none")};
+  background: ${({ toggle }) => (toggle ? "black" : "transparent")};
+  border: ${({ toggle }) =>
+    toggle ? "1px solid rgba(255,255,255,0.5)" : "none"};
 `;
 
 export const Input = styled.input<{ toggle: boolean }>`
@@ -15,10 +17,10 @@ export const Input = styled.input<{ toggle: boolean }>`
   width: 100%;
   height: 30px;
   background-color: #000;
-  border-bottom: 1px solid #222;
   outline: none;
   color: white;
   border: none;
+  font-size: 20px;
 `;
 
 export const Icon = styled.div<{ toggle: boolean }>`

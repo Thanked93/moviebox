@@ -27,12 +27,12 @@ export const parseResponse = (
     videos,
   } = item;
   if (
-    !overview ||
     !(name || original_title || original_name || title) ||
     !(backdrop_path || poster_path) ||
     !vote_average
-  )
+  ) {
     return null;
+  }
   let runTime: Runtime = {
     total_runTime: NaN,
   };
@@ -88,6 +88,6 @@ export const parseResponse = (
     isExtended: isExtended,
     extended: extended,
   };
-
+  console.log(movie);
   return movie;
 };
