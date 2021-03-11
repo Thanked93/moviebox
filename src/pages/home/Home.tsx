@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { FetchResponse, get } from "../../api/get";
+import { get } from "../../api/get";
 import { Movie } from "../../api/interfaces/Movie";
+import { Response } from "../../api/interfaces/Response";
 import { Request, requests } from "../../api/requests";
 import Banner from "../../components/banner/Banner";
 import Row from "../../components/row/Row";
@@ -20,15 +21,11 @@ const Home = () => {
 
   useEffect(() => {
     async function fetch(request: Request) {
-      let response: FetchResponse = await get(
-        request.url,
-        request.query,
-        false
-      );
+      let response: Response = await get(request.url, request.query, false);
       if (response.error) {
         setError(response.error);
       } else {
-        response.items.length > 0 &&
+        response.items &&
           dispatch(addEntry(request.url, response.items, request.title));
         if (request.url.includes("213")) {
           setBanner(

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { get } from "../../api/get";
 import { Movie } from "../../api/interfaces/Movie";
+import { Response } from "../../api/interfaces/Response";
 import { SEARCH_MOVIE, SEARCH_TV } from "../../api/requests";
 import Bulk from "../../components/bulk/Bulk";
 import Preview from "../../components/preview/Preview";
@@ -20,11 +21,15 @@ const Browse = () => {
 
   useEffect(() => {
     async function fetch(url: string, lang: string) {
-      let response = await get(`${SEARCH_MOVIE}${url}`, "movie", false);
+      let response: Response = await get(
+        `${SEARCH_MOVIE}${url}`,
+        "movie",
+        false
+      );
       if (response.items.length > 0) {
         setMovies(response.items);
       }
-      let response_two = await get(`${SEARCH_TV}${url}`, "tv", false);
+      let response_two: Response = await get(`${SEARCH_TV}${url}`, "tv", false);
       if (response_two.items.length > 0) {
         setMovies((m) => [...m, ...response_two.items]);
       }
