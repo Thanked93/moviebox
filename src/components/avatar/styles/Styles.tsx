@@ -37,11 +37,12 @@ export const MenuWrapper = styled.div`
 
 export const Menu = styled.div`
   position: absolute;
-  width: 20vmin;
+  max-width: 20vmin;
   display: flex;
   flex-direction: column;
-  height: 20vmin;
-  background-color: rgba(0, 0, 0, 0.9);
+  height: auto;
+  padding-bottom: 2vmin;
+  background-color: black;
 `;
 
 export const Line = styled.div`
@@ -52,7 +53,10 @@ export const Line = styled.div`
 
 export const MenuMe = styled.div`
   height: 5vmin;
-  width: 100%;
+  width: 19vmin;
+  padding-left: 1vmin;
+  padding-top: 0.5vmin;
+  padding-bottom: 0.5vmin;
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -75,10 +79,15 @@ export const MeDesc = styled.div`
 
 export const MenuItem = styled.div`
   text-decoration: 0;
-  width: 100%;
+  width: 19vmin;
   font-size: 1.9vmin;
   color: white;
   display: flex;
-  padding: 5px;
-  margin-left: 5px;
+  padding-top: 1vmin;
+  padding-bottom: 1vmin;
+  padding-left: 1vmin;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 `;

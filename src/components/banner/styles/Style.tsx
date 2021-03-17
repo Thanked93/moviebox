@@ -25,7 +25,7 @@ export const Buttons = styled.div``;
 export const Contents = styled.div`
   position: absolute;
   z-index: 2;
-  padding: 50px;
+  padding: 4vmin;
   width: 50%;
   whitespace: pre;
   bottom: 15vh;
@@ -35,6 +35,6 @@ export const Fade = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 30vh;
+  height: 20vh;
   background: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.9), #111);
 `;

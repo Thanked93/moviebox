@@ -7,7 +7,6 @@ export const Inner = styled.div`
   margin-right: 50px;
   margin-top: 60px;
   padding-bottom: 50px;
-  overflow-y: scroll;
   height: 100%;
 `;
 

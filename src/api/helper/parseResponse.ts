@@ -59,18 +59,6 @@ export const parseResponse = (
         ? videos.results.map((entry: { key: string }) => entry.key)
         : [],
     };
-    if (runtime || episode_run_time.length > 0) {
-      if (number_of_seasons) {
-        runTime = {
-          total_runTime: runtime || episode_run_time[0],
-          number_of_seasons: number_of_seasons,
-        };
-      } else {
-        runTime = {
-          total_runTime: runtime || episode_run_time[0],
-        };
-      }
-    }
   }
   const movie: Movie = {
     id,

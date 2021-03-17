@@ -1,14 +1,17 @@
 import styled from "styled-components";
-import { ArrowButton } from "../arrow/Arrow";
+import { ArrowButton } from "../../arrow/styles/Styles";
 
 export const Inner = styled.div<{ r: number }>`
+  positon: absolute;
   display: flex;
   flex-direction: column;
   align-items: start;
-  width: 100%;
+  width: 90%;
   margin-bottom: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
   transform: translateY(-15vh);
-  margin-top: ${({ r }) => (r > 0 ? "-10vmin" : "0vmin")};
+  margin-top: ${({ r }) => (r > 0 ? "-7vmin" : "0vmin")};
   &:hover ${ArrowButton} {
     opacity: 1;
     visibility: visible;
@@ -16,15 +19,18 @@ export const Inner = styled.div<{ r: number }>`
 `;
 
 export const Title = styled.h2`
+  margin-left: 50px;
   font-size: 2.8vmin;
   font-weight: 600;
 `;
 
 export const InnerMovies = styled.div<{ length: number }>`
   display: flex;
-  height: 40vmin;
-  width: 100%;
-  grid-gap: 5px;
+  positon: absolute;
+
+  width: 90%;
+  padding-left: 3%;
+  padding-right: 5%;
   overflow-x: scroll;
   transition: 500ms;
   scroll-behavior: smooth;

@@ -4,8 +4,7 @@ import { get } from "../../api/get";
 import { Movie } from "../../api/interfaces/Movie";
 import { Response } from "../../api/interfaces/Response";
 import { SEARCH_MOVIE, SEARCH_TV } from "../../api/requests";
-import Bulk from "../../components/bulk/Bulk";
-import Preview from "../../components/preview/Preview";
+import ListContainer from "../../components/movielist/listContainer/ListContainer";
 import { AccountState } from "../../store/account/accountReducer";
 import { Inner, InnerMovies, Result, Term } from "./styles/Styles";
 
@@ -43,7 +42,7 @@ const Browse = () => {
         Results for: <Term>{searchterm}</Term>
       </Result>
       <InnerMovies>
-        <Bulk movies={movies} />
+        <ListContainer movies={movies} />
       </InnerMovies>
     </Inner>
   );

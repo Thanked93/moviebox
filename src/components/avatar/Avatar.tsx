@@ -12,7 +12,7 @@ import {
   MenuItem,
   MenuMe,
   MenuWrapper,
-} from "./styles/styles";
+} from "./styles/Styles";
 
 const Avatar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
@@ -34,21 +34,23 @@ const Avatar = () => {
       {toggle && (
         <MenuWrapper onMouseLeave={() => setToggle(false)}>
           <Menu>
-            <MenuMe>
-              <Me
-                src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-                alt=""
-              />
-              <MeDesc>Guest</MeDesc>
-            </MenuMe>
+            <Link style={{ textDecoration: "none" }} to="/profile">
+              <MenuMe>
+                <Me
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+                  alt=""
+                />
+                <MeDesc>Guest</MeDesc>
+              </MenuMe>
+            </Link>
             <Line />
-            <Link to="/help">
+            <Link to="/help" style={{ textDecoration: "none" }}>
               <MenuItem>Help Centre</MenuItem>
             </Link>
-            <Link to="/settings">
+            <Link to="/settings" style={{ textDecoration: "none" }}>
               <MenuItem>Settings</MenuItem>
             </Link>
-            <Link to="/settings">
+            <Link to="/settings" style={{ textDecoration: "none" }}>
               <MenuItem>Sign Off</MenuItem>
             </Link>
           </Menu>

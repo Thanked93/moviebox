@@ -5,6 +5,6 @@ export const Inner = styled.div`
   height: auto;
 `;
 export const MovieInner = styled.div`
-  padding-left: 20px;
-  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
 `;

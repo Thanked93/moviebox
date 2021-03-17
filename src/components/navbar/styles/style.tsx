@@ -12,7 +12,7 @@ export const Inner = styled.div<{ transparent: boolean }>`
   background-color: ${({ transparent }) =>
     transparent ? "transparent" : "#111"};
   width: 100%;
-  z-index: 2;
+  z-index: 900;
 `;
 
 export const LeftWrapper = styled.div`

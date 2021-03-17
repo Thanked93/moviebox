@@ -28,16 +28,16 @@ const Navbar: React.FC = () => {
   return (
     <Inner transparent={bgVisible}>
       <LeftWrapper>
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <LinkLogo>MovieBox</LinkLogo>
         </Link>
-        <Link to="/">
+        <Link to="/" style={{ textDecoration: "none" }}>
           <LinkItem>Startseite</LinkItem>
         </Link>
-        <Link to="/movies">
+        <Link to="/movies" style={{ textDecoration: "none" }}>
           <LinkItem>Filme</LinkItem>
         </Link>
-        <Link to="/series">
+        <Link to="/series" style={{ textDecoration: "none" }}>
           <LinkItem>Serien</LinkItem>
         </Link>
       </LeftWrapper>

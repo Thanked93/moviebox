@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { get } from "../../api/get";
-import { Movie } from "../../api/interfaces/Movie";
 import { Response } from "../../api/interfaces/Response";
 import { Request, requests } from "../../api/requests";
 import Banner from "../../components/banner/Banner";
-import Row from "../../components/row/Row";
+import Row from "../../components/row/row/Row";
 import { addEntry } from "../../store/movie/actions";
 import { Inner, MovieInner } from "./styles/styles";
 
 const Home = () => {
   const [error, setError] = useState<string>("");
-  const [fetched, setFetched] = useState<boolean>(false);
-  const [banner, setBanner] = useState<Movie | null>(null);
   const entries = useSelector<any, any>((state) => {
     return state.movieReducer.entries;
   });
@@ -27,31 +24,23 @@ const Home = () => {
       } else {
         response.items &&
           dispatch(addEntry(request.url, response.items, request.title));
-        if (request.url.includes("213")) {
-          setBanner(
-            response.items[
-              Math.floor(Math.random() * response.items.length - 1)
-            ]
-          );
-        }
       }
     }
-    if (!fetched) {
+    if (entries.length === 0) {
       requests("en-US").forEach(async (r: Request) => {
         await fetch(r);
       });
-      setFetched(true);
     }
-  }, [setError, dispatch, fetched, setFetched]);
+  }, [setError, dispatch, entries.length]);
   // if we have an error we can return error page
-  if (error || !banner) return null;
+  if (error) return null;
 
   return (
     <Inner>
-      <Banner movie={banner} />
+      <Banner />
       <MovieInner>
         {entries.map((entry: any, i: number) => {
-          return <Row key={entry.url + i} rowIndex={i} />;
+          if (i === 0) return <Row key={entry.url + i} rowIndex={i} />;
         })}
       </MovieInner>
     </Inner>

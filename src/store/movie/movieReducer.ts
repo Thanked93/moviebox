@@ -1,7 +1,7 @@
 import { Movie } from "../../api/interfaces/Movie";
 import { Action, ADD_ENTRY } from "./actions";
 
-interface Entry {
+export interface Entry {
   items: Movie[];
   url: string;
   title: string;

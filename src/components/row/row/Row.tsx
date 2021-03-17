@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { RootStateOrAny, useSelector } from "react-redux";
-import { Movie } from "../../api/interfaces/Movie";
-import { MovieState } from "../../store/movie/movieReducer";
-import Preview from "../preview/Preview";
-import Arrow from "./arrow/Arrow";
+import { Movie } from "../../../api/interfaces/Movie";
+import { MovieState } from "../../../store/movie/movieReducer";
+import Arrow from "../arrow/Arrow";
+import RowItem from "../rowItem/RowItem";
 import { Inner, InnerMovies, Space, Title } from "./styles/Styles";
 
 interface RowProps {
@@ -43,10 +43,10 @@ const Row: React.FC<RowProps> = ({ rowIndex }) => {
         onScroll={() => handleScroll()}
       >
         {entry[rowIndex].items.map((item: Movie) => (
-          <Preview key={item.id} movie={item} />
+          <RowItem key={item.id} movie={item} />
         ))}
+        <Space />
       </InnerMovies>
-      <Space />
       {showL && <Arrow isLeft={true} rowIndex={rowIndex} />}
       {showR && <Arrow isLeft={false} rowIndex={rowIndex} />}
     </Inner>
