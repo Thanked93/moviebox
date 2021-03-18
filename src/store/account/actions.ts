@@ -5,6 +5,7 @@ type Payload = {
   id?: number;
   lang?: string;
   searchterm?: string;
+  name?: string;
 };
 
 export type Action = { type: string; payload: Payload };
@@ -31,4 +32,10 @@ export const CHANGE_SEARCHTERM = "CHANGE_SEARCHTERM";
 export const ChangeSearchTerm = (searchterm: string) => ({
   type: CHANGE_SEARCHTERM,
   payload: { searchterm },
+});
+
+export const CHANGE_NAME = "CHANGE_NAME";
+export const ChangeName = (name: string) => ({
+  type: CHANGE_NAME,
+  payload: { name },
 });

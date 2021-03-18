@@ -13,6 +13,7 @@ import {
   PreviewWrapper,
   InnerW,
 } from "./styles/Styles";
+import Preview from "../../preview/preview/Preview";
 
 interface RowItemProps {
   movie: Movie;
@@ -39,12 +40,7 @@ const RowItem: React.FC<RowItemProps> = ({ movie }) => {
           )}
         </Inner>
       </Container>
-      {toggle && (
-        <PreviewWrapper onClick={() => setToggle(false)}>
-          <InnerW>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</InnerW>
-          {/* <Player movie={movie} setToggle={setToggle} />{" "} */}
-        </PreviewWrapper>
-      )}
+      {toggle && <Preview movie={movie} setToggle={setToggle} />}
     </>
   );
 };

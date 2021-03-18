@@ -15,13 +15,8 @@ export const Title = styled.h2`
 
 export const Fade = styled.div`
   position: absolute;
-  width: 60%;
-  height: 10vmin;
-  top: 34vmin;
-  background: linear-gradient(
-    180deg,
-    transparent,
-    rgba(0, 0, 0, 0.5),
-    transparent
-  );
+  width: 100%;
+  height: 15vmin;
+  top: 28vmin;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.9), #111;);
 `;

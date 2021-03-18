@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
-import Language from "./Language/Language";
+import { RootStateOrAny, useSelector } from "react-redux";
+import { AccountState } from "../../store/account/accountReducer";
+import Language from "./language/Language";
+import Name from "./name/Name";
 import { Container, Icon, ItemContainer, Title } from "./styles/Styles";
 
 const Accordion: React.FC = () => {
@@ -26,12 +29,12 @@ const Accordion: React.FC = () => {
   return (
     <Container>
       <ItemContainer onClick={clickToggleName}>
-        <Title>Change name</Title>
+        <Title>Do you want to change your name?</Title>
         <Icon>{toggleName ? <AiOutlineMinus /> : <AiOutlinePlus />}</Icon>
       </ItemContainer>
-      {toggleName && <Language />}
+      {toggleName && <Name />}
       <ItemContainer onClick={clickToggleLang}>
-        <Title>Change Lang</Title>
+        <Title>Do you want to change the language?</Title>
         <Icon>{toggleLang ? <AiOutlineMinus /> : <AiOutlinePlus />}</Icon>
       </ItemContainer>
       {toggleLang && <Language />}

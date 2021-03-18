@@ -60,6 +60,7 @@ export const parseResponse = (
         : [],
     };
   }
+
   const movie: Movie = {
     id,
     query,

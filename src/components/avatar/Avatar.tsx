@@ -50,9 +50,6 @@ const Avatar = () => {
             <Link to="/settings" style={{ textDecoration: "none" }}>
               <MenuItem>Settings</MenuItem>
             </Link>
-            <Link to="/settings" style={{ textDecoration: "none" }}>
-              <MenuItem>Sign Off</MenuItem>
-            </Link>
           </Menu>
         </MenuWrapper>
       )}

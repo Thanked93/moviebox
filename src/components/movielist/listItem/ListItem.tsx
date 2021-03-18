@@ -5,7 +5,6 @@ import urls from "../../../fixtures/Urls.json";
 import AddButton from "../../addbutton/AddButton";
 import ShowButton from "../../addbutton/ShowButton";
 import { Movie } from "../../../api/interfaces/Movie";
-import Player from "../../player/Player";
 import Preview from "../../preview/preview/Preview";
 
 interface ListItemProps {

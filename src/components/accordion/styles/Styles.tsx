@@ -2,12 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  width: 90%;
+  width: 60vmin;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid white;
-  background-color: blue;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
 `;
 
 export const Item = styled.div``;
@@ -17,20 +18,23 @@ export const Icon = styled.div`
   height: auto;
   margin-right: 10px;
   margin-left: auto;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 3vmin;
 `;
 
-export const Title = styled.h2``;
+export const Title = styled.h2`
+  font-size: 2.5vmin;
+`;
 
 export const ItemContainer = styled.div`
   height: 7vmin;
   width: 100%;
-  border: 1px solid yellow;
-  background-color: green;
   display: flex;
   flex-direction: row;
+  border: 1px solid white;
+  &:hover {
+    cursor: pointer;
+  }
 `;

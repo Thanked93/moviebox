@@ -23,17 +23,28 @@ interface PreviewProps {
 const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
   const [preview, setPreview] = useState<Movie | null>(null);
   const [error, setError] = useState<string>("");
+
   useEffect(() => {
     async function fetch() {
       const res: PreviewResponse = await getPreview(movie);
       res.error ? setError("Something went wrong") : setPreview(res.movie);
     }
     fetch();
-  }, [getPreview, setPreview]);
-  console.log(preview);
+  }, [setPreview, getPreview]);
+
+  const close = (e: any) => {
+    if (e.target.className.includes("close")) {
+      setToggle(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("click", close);
+    return () => window.removeEventListener("click", close);
+  }, []);
 
   return (
-    <Container>
+    <Container className="close">
       {error || !preview ? (
         <Inner>
           <Error>{error || "Something went wrong..."}</Error>

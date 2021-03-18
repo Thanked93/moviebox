@@ -21,12 +21,11 @@ const Searchbar = () => {
     setPush(false);
   }, [push, router]);
 
-  // dispatch 2 seconds after the user stopped typing
+  // dispatch .7 seconds after the user stopped typing
   useEffect(() => {
     let timer = setTimeout(() => {
-      console.log("dispatch", searchTerm);
       dispatch(ChangeSearchTerm(searchTerm));
-    }, 1000);
+    }, 700);
     return () => clearTimeout(timer);
   }, [searchTerm, dispatch]);
 

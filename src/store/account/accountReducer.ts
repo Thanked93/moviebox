@@ -3,6 +3,7 @@ import {
   Action,
   ADD_MOVIE,
   CHANGE_LANG,
+  CHANGE_NAME,
   CHANGE_SEARCHTERM,
   REMOVE_MOVIE,
 } from "./actions";
@@ -48,6 +49,12 @@ export const accountReducer = (
       return {
         ...state,
         searchterm: action.payload.searchterm,
+      };
+    }
+    case CHANGE_NAME: {
+      return {
+        ...state,
+        name: action.payload.name,
       };
     }
 

@@ -13,6 +13,7 @@ export const LeftContent: React.FC<LeftContentProps> = ({ movie }) => {
         <Item color={"green"}>
           {Math.floor(movie.vote_average * 10)}% positive
         </Item>
+        <Item color={"white"}>{movie.release_date?.substr(0, 4)}</Item>
       </ItemRow>
       <Description>{movie.overview}</Description>
     </Inner>

@@ -29,7 +29,7 @@ const Banner: React.FC = () => {
     if (entry) {
       let m: Movie =
         entry.items[Math.floor(Math.random() * entry.items.length - 1)];
-      if (m.bannerImage != null) {
+      if (m) {
         setMovie(m);
         setUrl(`${Urls.imageUrl}${m.bannerImage}`);
       }

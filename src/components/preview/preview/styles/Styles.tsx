@@ -2,17 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   position: fixed;
-  z-index: 500;
-  top: 65px;
-  left: 0;
+  z-index: 900;
+
   height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: transparent;
 `;
 
 export const Inner = styled.div`
+  position: absolute;
+  top: 10vmin;
   z-index: 501;
   display: flex;
   flex-direction: column;
