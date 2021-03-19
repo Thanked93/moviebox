@@ -1,0 +1,35 @@
+{
+  "navbar.home": "Home",
+  "navbar.movies": "Movies",
+  "navbar.series": "Series",
+  "navbar.search.placeholder": "Movies, Series",
+
+  "avatar.helpcentre": "Help Centre",
+  "avatar.settings": "Settings",
+
+  "button.add": "Add",
+  "button.remove": "Remove",
+  "button.show": "Show",
+
+  "profile.title": "My List:",
+  "profile.title2": "Your list is currently Empty",
+  "profile.sub": "Go and add more Movies.",
+  "profile.sub2": "You should add some movies.",
+  "profile.button": "Home",
+
+  "settings.title": "Hello {name}",
+  "settings.description": "Settings allow you to change your name or select another language.",
+
+  "accordion.name.title": "Do you want to change your name?",
+  "accordion.name.sub": "Enter your new Name:",
+
+  "accordion.name.button": "Confirm",
+  "accordion.lang.title": "Do you want to change your language?",
+  "accordion.lang.selected": "Selected: {lang}",
+
+  "preview.rating": "positive",
+  "preview.cast": "cast:",
+  "preview.cast2": "cast:",
+  "preview.genre": "genre:",
+  "preview.genre2": "genres:"
+}

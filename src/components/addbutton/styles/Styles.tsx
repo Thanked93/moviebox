@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const Button = styled.button`
   border: none;
-  color: #fff;
+  color: #111;
+
   font-weight: 700;
   width: fit-content;
   border-radius: 0.2vw;
@@ -11,11 +12,11 @@ export const Button = styled.button`
   margin-right: 1vmin;
   padding-top: 1vmin;
   padding-bottom: 1vmin;
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: #e6e6e6;
   &:hover {
     cursor: pointer;
-    color: #000;
-    background-color: #e6e6e6;
+    background-color: rgba(71, 71, 71, 0.5);
+    color: #e6e6e6;
     transition: all 0.2s;
   }
 `;

@@ -3,6 +3,7 @@ import { RootStateOrAny, useSelector } from "react-redux";
 import { Inner, Title, Description } from "./styles/Styles";
 import { AccountState } from "../../store/account/accountReducer";
 import Accordion from "../../components/accordion/Accordion";
+import { FormattedMessage } from "react-intl";
 
 export const Settings: React.FC = () => {
   const name = useSelector<RootStateOrAny, AccountState["name"]>(
@@ -10,9 +11,11 @@ export const Settings: React.FC = () => {
   );
   return (
     <Inner>
-      <Title>Hello {name}</Title>
+      <Title>
+        <FormattedMessage id="settings.title" values={{ name: name }} />
+      </Title>
       <Description>
-        Settings allow you to change your name or select another language.
+        <FormattedMessage id="settings.description" />
       </Description>
       <Accordion />
     </Inner>

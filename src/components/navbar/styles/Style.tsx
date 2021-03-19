@@ -20,6 +20,7 @@ export const LeftWrapper = styled.div`
   grid-row: 1;
   display: flex;
   align-items: center;
+  padding-left: 3vmin;
   height: 100%;
   width: 100%;
 `;
@@ -40,10 +41,17 @@ export const RightWrapper = styled.div`
   width: 100%;
 `;
 
-export const LinkItem = styled.div`
+export const NavItems = styled.div`
+  display: flex;
+  margin-left: 3vmin;
+`;
+
+export const LinkItem = styled.div<{ current: boolean }>`
   font-weight: 600;
   padding: 5px;
-  color: white;
+  padding-left: 8px;
+  color: ${({ current }) =>
+    current ? "rgba(250, 250, 250, 1) " : "rgba(230,230,230,.7)"};
   text-decoration: none;
   font-size: 1.5vmin;
   &:hover {

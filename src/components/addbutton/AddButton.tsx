@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { Movie } from "../../api/interfaces/Movie";
 import { AccountState } from "../../store/account/accountReducer";
@@ -23,7 +24,11 @@ const AddButton: React.FC<AddButtonProps> = ({ movie }) => {
           : dispatch(AddMovie(movie));
       }}
     >
-      {userMovies.includes(movie) ? "Remove" : "Add"}
+      {userMovies.includes(movie) ? (
+        <FormattedMessage id="button.remove" />
+      ) : (
+        <FormattedMessage id="button.add" />
+      )}
     </Button>
   );
 };

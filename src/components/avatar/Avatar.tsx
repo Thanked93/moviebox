@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsChevronCompactDown, BsChevronCompactUp } from "react-icons/bs";
+import { FormattedMessage } from "react-intl";
 import { Link } from "react-router-dom";
 import {
   Icon,
@@ -45,10 +46,14 @@ const Avatar = () => {
             </Link>
             <Line />
             <Link to="/help" style={{ textDecoration: "none" }}>
-              <MenuItem>Help Centre</MenuItem>
+              <MenuItem>
+                <FormattedMessage id="avatar.helpcentre" />
+              </MenuItem>
             </Link>
             <Link to="/settings" style={{ textDecoration: "none" }}>
-              <MenuItem>Settings</MenuItem>
+              <MenuItem>
+                <FormattedMessage id="avatar.settings" />
+              </MenuItem>
             </Link>
           </Menu>
         </MenuWrapper>

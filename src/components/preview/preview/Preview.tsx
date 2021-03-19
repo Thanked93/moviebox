@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { RootStateOrAny, useSelector } from "react-redux";
 import { getPreview } from "../../../api/get";
 import { Movie } from "../../../api/interfaces/Movie";
 import { PreviewResponse } from "../../../api/interfaces/Response";
+import { AccountState } from "../../../store/account/accountReducer";
 import LeftContent from "../leftContent/LeftContent";
 import Player from "../player/Player";
 import RightContent from "../rightContent/RightContent";
@@ -21,12 +23,15 @@ interface PreviewProps {
 }
 
 const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
+  const lang = useSelector<RootStateOrAny, AccountState["lang"]>(
+    (state) => state.accountReducer.lang
+  );
   const [preview, setPreview] = useState<Movie | null>(null);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
     async function fetch() {
-      const res: PreviewResponse = await getPreview(movie);
+      const res: PreviewResponse = await getPreview(movie, lang);
       res.error ? setError("Something went wrong") : setPreview(res.movie);
     }
     fetch();

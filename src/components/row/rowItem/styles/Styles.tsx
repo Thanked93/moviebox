@@ -15,6 +15,7 @@ export const Inner = styled.div`
   &:hover {
     padding: 3px;
     z-index: 298;
+
     cursor: pointer;
     width: 28vmin;
     padding-top: 10px;

@@ -4,8 +4,9 @@ import { useDispatch } from "react-redux";
 import { useHistory, useLocation } from "react-router";
 import { ChangeSearchTerm } from "../../store/account/actions";
 import { Icon, Inner, Input } from "./styles/Styles";
+import { injectIntl } from "react-intl";
 
-const Searchbar = () => {
+const Searchbar: React.FC<any> = ({ intl }) => {
   const location = useLocation();
   const router = useHistory();
   const [toggle, setToggle] = useState<boolean>(false);
@@ -41,6 +42,7 @@ const Searchbar = () => {
       {toggle && (
         <Input
           value={searchTerm}
+          placeholder={intl.formatMessage({ id: "navbar.search.placeholder" })}
           onChange={(e) => {
             if (!location.pathname.includes("browse")) {
               setPush(true);
@@ -55,4 +57,4 @@ const Searchbar = () => {
   );
 };
 
-export default Searchbar;
+export default injectIntl(Searchbar);

@@ -42,7 +42,7 @@ export const accountReducer = (
     case CHANGE_LANG: {
       return {
         ...state,
-        lang: action.payload,
+        lang: action.payload.lang,
       };
     }
     case CHANGE_SEARCHTERM: {

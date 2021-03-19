@@ -1,0 +1,35 @@
+{
+  "navbar.home": "Startseite",
+  "navbar.movies": "Filme",
+  "navbar.series": "Serien",
+  "navbar.search.placeholder": "Filme, Serien",
+
+  "avatar.helpcentre": "Hilfe-Center",
+  "avatar.settings": "Einstellungen",
+
+  "button.add": "Hinzufügen",
+  "button.remove": "Entfernen",
+  "button.show": "Zeigen",
+
+  "profile.title": "Mein Liste:",
+  "profile.title2": "Deine Liste ist momentan leer.",
+  "profile.sub": "Fügen Sie mehr Filme hinzu.",
+  "profile.sub2": "Fügen Sie Filme hinzu.",
+  "profile.button": "Startseite",
+
+  "settings.title": "Hallo {name}",
+  "settings.description": "Die Einstellungen ermöglichen dir deinen Namen und die ausgewählte Sprache zu ändern.",
+
+  "accordion.name.title": "Möchten Sie ihren Namen ändern?",
+  "accordion.name.sub": "Geben Sie ihren Namen ein:",
+  "accordion.name.button": "Bestätigen",
+
+  "accordion.lang.title": "Möchten Sie die Sprache ändern?",
+  "accordion.lang.selected": "Ausgewählt: {lang}",
+
+  "preview.rating": "positive",
+  "preview.cast": "cast:",
+  "preview.cast2": "cast:",
+  "preview.genre": "genre:",
+  "preview.genre2": "genres:"
+}

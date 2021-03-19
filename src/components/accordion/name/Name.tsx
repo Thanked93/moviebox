@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { useDispatch } from "react-redux";
 import { ChangeName } from "../../../store/account/actions";
 import {
@@ -44,7 +45,9 @@ const Name: React.FC = () => {
 
   return (
     <Inner>
-      <Text>Enter your new Name:</Text>
+      <Text>
+        <FormattedMessage id="accordion.name.sub" />
+      </Text>
       <Form onSubmit={submit}>
         <Input
           type="text"
@@ -56,7 +59,9 @@ const Name: React.FC = () => {
           {error && <Label color="red">{error}</Label>}
           {success && <Label color="green">{success}</Label>}
         </Messages>
-        <SubmitButton>Submit</SubmitButton>
+        <SubmitButton>
+          <FormattedMessage id="accordion.name.button" />
+        </SubmitButton>
       </Form>
     </Inner>
   );

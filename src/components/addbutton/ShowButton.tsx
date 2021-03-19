@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { Movie } from "../../api/interfaces/Movie";
 import Player from "../player/Player";
 import { Button } from "./styles/Styles";
@@ -10,7 +11,9 @@ interface ShowButtonProps {
 export const ShowButton: React.FC<ShowButtonProps> = ({ toggle }) => {
   return (
     <>
-      <Button onClick={() => toggle(true)}>Show</Button>
+      <Button onClick={() => toggle(true)}>
+        <FormattedMessage id="button.show" />
+      </Button>
     </>
   );
 };

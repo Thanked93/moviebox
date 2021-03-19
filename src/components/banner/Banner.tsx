@@ -12,6 +12,7 @@ import {
   Overview,
   Title,
   Buttons,
+  FadeLeft,
   Fade,
 } from "./styles/Style";
 
@@ -43,10 +44,11 @@ const Banner: React.FC = () => {
           <Title>{movie.title}</Title>
           <Overview>{movie.overview}</Overview>
           <Buttons>
-            <AddButton movie={movie} />
             <ShowButton toggle={setShow} />
+            <AddButton movie={movie} />
           </Buttons>
         </Contents>
+        <FadeLeft />
         <Fade />
         {show && <Preview movie={movie} setToggle={setShow} />}
       </Inner>

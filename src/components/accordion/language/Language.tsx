@@ -1,8 +1,10 @@
+import getUnicodeFlagIcon from "country-flag-icons/unicode";
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { AccountState } from "../../../store/account/accountReducer";
-import { Inner, Item, Rotation, ScrollButton } from "./styles/Styles";
-
+import { ChangeLang } from "../../../store/account/actions";
+import { Inner, LangButton } from "./styles/Styles";
 export const Language: React.FC = () => {
   const lang = useSelector<RootStateOrAny, AccountState["lang"]>(
     (state) => state.accountReducer.lang
@@ -12,13 +14,17 @@ export const Language: React.FC = () => {
 
   return (
     <Inner>
-      <ScrollButton></ScrollButton>
-      <Rotation>
-        <Item>Hello</Item>
+      <FormattedMessage
+        id="accordion.lang.selected"
+        values={{ lang: lang === "en-US" ? "English" : "Deutsch" }}
+      />
 
-        <Item>Hello</Item>
-      </Rotation>
-      <ScrollButton></ScrollButton>
+      <LangButton onClick={() => dispatch(ChangeLang("en-US"))}>
+        English {getUnicodeFlagIcon("US")}
+      </LangButton>
+      <LangButton onClick={() => dispatch(ChangeLang("de-DE"))}>
+        Deutsch {getUnicodeFlagIcon("DE")}
+      </LangButton>
     </Inner>
   );
 };

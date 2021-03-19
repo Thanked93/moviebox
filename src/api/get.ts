@@ -30,12 +30,16 @@ export async function get(
   return { items, error };
 }
 
-export async function getPreview(movie: Movie): Promise<PreviewResponse> {
+export async function getPreview(
+  movie: Movie,
+  lang: string
+): Promise<PreviewResponse> {
   let preview: Movie = movie;
   let error = "";
   await axios
-    .get(`/${movie.query}/${movie.id}?${EXTEND_ENTRY("en-US")}`)
+    .get(`/${movie.query}/${movie.id}?${EXTEND_ENTRY(lang)}`)
     .then((res) => {
+      console.log(res);
       let item = parseResponse(res.data, movie.query, true);
       if (item) preview = item;
     })

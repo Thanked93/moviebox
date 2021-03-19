@@ -25,6 +25,7 @@ export const Icon = styled.div`
 `;
 
 export const Title = styled.h2`
+  padding-left: 1vmin;
   font-size: 2.5vmin;
 `;
 

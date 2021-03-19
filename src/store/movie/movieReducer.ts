@@ -1,5 +1,5 @@
 import { Movie } from "../../api/interfaces/Movie";
-import { Action, ADD_ENTRY } from "./actions";
+import { Action, ADD_ENTRY, CLEAR_ALL } from "./actions";
 
 export interface Entry {
   items: Movie[];
@@ -24,6 +24,12 @@ export const movieReducer = (
       return {
         ...state,
         entries: [...state.entries, action.payload],
+      };
+    }
+    case CLEAR_ALL: {
+      return {
+        ...state,
+        entries: [],
       };
     }
     default:

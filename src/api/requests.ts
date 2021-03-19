@@ -67,7 +67,8 @@ export const DOCUMENTARY_MOVIES = (lang: string) => {
   };
 };
 export const EXTEND_ENTRY = (lang: string) => {
-  return `api_key=${KEY}&language=${lang}&append_to_response=videos,credits,release_dates`;
+  return `api_key=${KEY}&language=${lang}&append_to_response=videos,credits,release_dates,content_ratings
+  `;
 };
 
 export const requests = (lang: string) => {
