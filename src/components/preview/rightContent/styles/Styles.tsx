@@ -17,8 +17,11 @@ export const Item = styled.p`
 `;
 
 export const ItemTitle = styled.h3`
-  width: 20%;
+  margin-left: 2vmin;
+  width: 40%;
   display: flex;
+  color: #a2a2a2;
+  font-weight: 500;
   justify-content: flex-start;
   font-size: 1.6vmin;
 `;

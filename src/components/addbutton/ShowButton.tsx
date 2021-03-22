@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { FormattedMessage } from "react-intl";
-import { Movie } from "../../api/interfaces/Movie";
-import Player from "../player/Player";
 import { Button } from "./styles/Styles";
+import { FaPlay } from "react-icons/fa";
 
 interface ShowButtonProps {
   toggle: React.Dispatch<React.SetStateAction<boolean>>;
@@ -11,7 +10,8 @@ interface ShowButtonProps {
 export const ShowButton: React.FC<ShowButtonProps> = ({ toggle }) => {
   return (
     <>
-      <Button onClick={() => toggle(true)}>
+      <Button dark={false} onClick={() => toggle(true)}>
+        <FaPlay height="100%" width="100%" style={{ marginRight: "5px" }} />
         <FormattedMessage id="button.show" />
       </Button>
     </>

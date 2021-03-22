@@ -18,7 +18,7 @@ export interface AccountState {
 const initialState: AccountState = {
   movies: [],
   name: "guest",
-  lang: "De-DE",
+  lang: "en-US",
   searchterm: "",
 };
 

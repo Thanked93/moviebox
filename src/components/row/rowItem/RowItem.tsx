@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 import { Movie } from "../../../api/interfaces/Movie";
+import urls from "../../../fixtures/Urls.json";
 import AddButton from "../../addbutton/AddButton";
 import ShowButton from "../../addbutton/ShowButton";
-import Player from "../../player/Player";
-import urls from "../../../fixtures/Urls.json";
-
-import {
-  Container,
-  Inner,
-  Image,
-  Buttons,
-  PreviewWrapper,
-  InnerW,
-} from "./styles/Styles";
 import Preview from "../../preview/preview/Preview";
+import { Buttons, Container, Image, Inner } from "./styles/Styles";
 
 interface RowItemProps {
   movie: Movie;
@@ -34,8 +25,8 @@ const RowItem: React.FC<RowItemProps> = ({ movie }) => {
           />
           {showButtons && (
             <Buttons>
-              <AddButton movie={movie} />
               <ShowButton toggle={setToggle} />
+              <AddButton movie={movie} />
             </Buttons>
           )}
         </Inner>

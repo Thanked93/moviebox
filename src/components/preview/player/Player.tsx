@@ -13,7 +13,7 @@ export const Player: React.FC<PlayerProps> = ({ video, image }) => {
       <Inner>
         <ReactPlayer
           playing={true}
-          height="100%"
+          height="30vmin"
           width="80%"
           controls={false}
           url={`https://www.youtube.com/watch?v=${video}`}

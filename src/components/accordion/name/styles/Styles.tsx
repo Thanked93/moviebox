@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Button } from "../../../addbutton/styles/Styles";
+
 export const Inner = styled.div``;
 
 export const Form = styled.form`
@@ -24,9 +25,10 @@ export const Label = styled.label<{ color: string }>`
 `;
 
 export const Input = styled.input`
-  background: #000;
+  background: #111;
   color: white;
-  border: none;
+  border: 1px solid #222;
+  border-radius: 10px;
   height: 3vmin;
   font-size: 2vmin;
   width: 22vmin;

@@ -19,6 +19,7 @@ export const Buttons = styled.div`
   display: flex;
   justfiy-content: center;
   align-items: center;
+  margin-top: 0.5vmin;
 `;
 
 export const Inner = styled.div`

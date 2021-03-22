@@ -26,8 +26,8 @@ const ListItem: React.FC<ListItemProps> = ({ movie }) => {
           <Image src={`${urls.imageUrl}${movie.image}`} alt="" />
           {enter && (
             <Buttons>
-              <AddButton movie={movie} />
               <ShowButton toggle={setShow} />
+              <AddButton movie={movie} />
             </Buttons>
           )}
         </Container>

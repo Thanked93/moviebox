@@ -8,10 +8,11 @@ export const ADD_ENTRY = "ADD_ENTRY";
 export const addEntry = (
   url: string,
   items: Movie[],
-  title: string
+  title: string,
+  id: string
 ): Action => ({
   type: ADD_ENTRY,
-  payload: { url, items, title },
+  payload: { url, items, title, id },
 });
 
 export const CLEAR_ALL = "CLEAR_ALL";

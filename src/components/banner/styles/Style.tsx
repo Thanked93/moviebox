@@ -22,6 +22,7 @@ export const Overview = styled.div`
 `;
 
 export const Buttons = styled.div`
+  display: flex;
   margin-top: 1vmin;
 `;
 

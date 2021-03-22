@@ -11,7 +11,6 @@ const Searchbar: React.FC<any> = ({ intl }) => {
   const router = useHistory();
   const [toggle, setToggle] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>("");
-  const [changeTerm, setChangeTerm] = useState<boolean>(false);
   const [push, setPush] = useState(false);
   const dispatch = useDispatch();
 

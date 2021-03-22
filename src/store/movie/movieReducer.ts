@@ -5,6 +5,7 @@ export interface Entry {
   items: Movie[];
   url: string;
   title: string;
+  id: string;
 }
 
 export interface MovieState {

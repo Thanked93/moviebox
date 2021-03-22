@@ -17,7 +17,6 @@ import {
 } from "./styles/Style";
 
 const Banner: React.FC = () => {
-  const [redo, setRedo] = useState(true);
   const [movie, setMovie] = useState<Movie | null>(null);
   const [show, setShow] = useState<boolean>(false);
   const [url, setUrl] = useState<string>("");
@@ -35,14 +34,14 @@ const Banner: React.FC = () => {
         setUrl(`${Urls.imageUrl}${m.bannerImage}`);
       }
     }
-  }, [entries, setUrl, setMovie, redo, setRedo]);
+  }, [entries, setUrl, setMovie]);
 
   return !movie ? null : (
     <>
       <Inner url={url}>
         <Contents>
           <Title>{movie.title}</Title>
-          <Overview>{movie.overview}</Overview>
+          <Overview>{movie.overview.substr(0, 200) + "..."}</Overview>
           <Buttons>
             <ShowButton toggle={setShow} />
             <AddButton movie={movie} />

@@ -12,6 +12,6 @@ export const Inner = styled.div`
 `;
 
 export const LangButton = styled(Button)`
-  width: 20vmin;
+  width: 12vmin;
   margin-top: 1vmin;
 `;

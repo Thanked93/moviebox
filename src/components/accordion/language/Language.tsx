@@ -5,6 +5,7 @@ import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
 import { AccountState } from "../../../store/account/accountReducer";
 import { ChangeLang } from "../../../store/account/actions";
 import { Inner, LangButton } from "./styles/Styles";
+
 export const Language: React.FC = () => {
   const lang = useSelector<RootStateOrAny, AccountState["lang"]>(
     (state) => state.accountReducer.lang
@@ -19,10 +20,10 @@ export const Language: React.FC = () => {
         values={{ lang: lang === "en-US" ? "English" : "Deutsch" }}
       />
 
-      <LangButton onClick={() => dispatch(ChangeLang("en-US"))}>
+      <LangButton dark={true} onClick={() => dispatch(ChangeLang("en-US"))}>
         English {getUnicodeFlagIcon("US")}
       </LangButton>
-      <LangButton onClick={() => dispatch(ChangeLang("de-DE"))}>
+      <LangButton dark={true} onClick={() => dispatch(ChangeLang("de-DE"))}>
         Deutsch {getUnicodeFlagIcon("DE")}
       </LangButton>
     </Inner>

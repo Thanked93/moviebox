@@ -27,9 +27,22 @@
   "accordion.lang.title": "Möchten Sie die Sprache ändern?",
   "accordion.lang.selected": "Ausgewählt: {lang}",
 
-  "preview.rating": "positive",
-  "preview.cast": "cast:",
-  "preview.cast2": "cast:",
+  "preview.rating": " Positiv",
+  "preview.time": "{min} Min.",
+  "preview.season": "{num} Staffel",
+  "preview.season2": "{num} Staffeln",
+  "preview.cast": "Schauspieler:",
+  "preview.cast2": "Schauspieler:",
   "preview.genre": "genre:",
-  "preview.genre2": "genres:"
+  "preview.genre2": "genres:",
+  "preview.producer": "Produzent:",
+  "preview.producer2": "Produzenten:",
+
+  "home.netflixoriginals": "Netflix Originale",
+  "home.documentaries": "Dokumentationen",
+  "home.toprated": "Am besten bewertet",
+  "home.action": "Action Filme",
+  "home.comedy": "Komödien",
+  "home.horror": "Horror",
+  "home.romance": "Romanzen"
 }

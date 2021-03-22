@@ -3,8 +3,8 @@ import styled from "styled-components";
 export const Inner = styled.div`
   width: 55%;
   height: 100%;
-  display:flex;
-  flex-direction:column;s
+  display: flex;
+  flex-direction: column;
 `;
 
 export const ItemRow = styled.div`
@@ -12,11 +12,16 @@ export const ItemRow = styled.div`
 `;
 
 export const Description = styled.p`
-  font-size: max(1.6vmin, 10px);
+  font-size: 1.6vmin;
 `;
 
-export const Item = styled.div<{ color: string }>`
+export const Item = styled.div<{ color: string; border: boolean }>`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: ${({ color }) => color};
   font-size: 2vmin;
-  padding-right: 5px;
+  padding-right: 1.2vmin;
+  padding-left: 1vmin;
+  ${({ border }) => (border ? "border: 2px solid white" : "")};
 `;

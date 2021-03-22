@@ -21,7 +21,7 @@ const Profile = () => {
           <FormattedMessage id="profile.sub2" />
         </Message>
         <Link to={"/"} style={{ textDecoration: "none" }}>
-          <BackButton>
+          <BackButton dark={true}>
             <FormattedMessage id="profile.button" />
           </BackButton>
         </Link>
@@ -40,7 +40,7 @@ const Profile = () => {
         <FormattedMessage id="profile.sub" />
       </Message>
       <Link to={"/"} style={{ textDecoration: "none" }}>
-        <BackButton>
+        <BackButton dark={true}>
           <FormattedMessage id="profile.button" />
         </BackButton>
       </Link>

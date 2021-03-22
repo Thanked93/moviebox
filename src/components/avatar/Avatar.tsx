@@ -23,6 +23,7 @@ const Avatar = () => {
       <Image
         onMouseEnter={() => setToggle(true)}
         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+        alt=""
         onClick={() => setToggle((toggle) => !toggle)}
       />
       <Icon>
@@ -45,11 +46,7 @@ const Avatar = () => {
               </MenuMe>
             </Link>
             <Line />
-            <Link to="/help" style={{ textDecoration: "none" }}>
-              <MenuItem>
-                <FormattedMessage id="avatar.helpcentre" />
-              </MenuItem>
-            </Link>
+
             <Link to="/settings" style={{ textDecoration: "none" }}>
               <MenuItem>
                 <FormattedMessage id="avatar.settings" />

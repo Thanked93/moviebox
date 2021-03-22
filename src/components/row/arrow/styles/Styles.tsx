@@ -4,8 +4,8 @@ export const ArrowButton = styled.div<{ isLeft: boolean }>`
   position: absolute;
   z-index: 301;
   left: ${({ isLeft }) => (isLeft ? "0px" : "auto")};
-  right: ${({ isLeft }) => (isLeft ? "auto" : "20px")};
-  height: 32vmin;
+  right: ${({ isLeft }) => (isLeft ? "auto" : "1.5vmin")};
+  height: 30vmin;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
@@ -15,6 +15,7 @@ export const ArrowButton = styled.div<{ isLeft: boolean }>`
   visibility: hidden;
   transition: all 500ms;
   width: 6vmin;
+  transform: translateY(1.4vmin);
   &:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.9);

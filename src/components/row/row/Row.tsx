@@ -1,7 +1,8 @@
 import React, { useState } from "react";
+import { FormattedMessage } from "react-intl";
 import { RootStateOrAny, useSelector } from "react-redux";
 import { Movie } from "../../../api/interfaces/Movie";
-import { MovieState } from "../../../store/movie/movieReducer";
+import { movieReducer, MovieState } from "../../../store/movie/movieReducer";
 import Arrow from "../arrow/Arrow";
 import RowItem from "../rowItem/RowItem";
 import { Inner, InnerMovies, Space, Title } from "./styles/Styles";
@@ -36,7 +37,9 @@ const Row: React.FC<RowProps> = ({ rowIndex }) => {
 
   return (
     <Inner r={rowIndex}>
-      <Title>{entry[rowIndex].title}</Title>
+      <Title>
+        <FormattedMessage id={entry[rowIndex].id} defaultMessage="hi" />
+      </Title>
       <InnerMovies
         id={`row-${rowIndex}`}
         length={entry[rowIndex].items.length}

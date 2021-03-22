@@ -1,4 +1,5 @@
 import React from "react";
+import { FormattedMessage } from "react-intl";
 import { Movie } from "../../../api/interfaces/Movie";
 import { Inner, ItemRow, ItemTitle, Item } from "./styles/Styles";
 
@@ -11,19 +12,43 @@ export const RightContent: React.FC<RightContentProps> = ({ movie }) => {
     <Inner>
       {movie.extended.actors.length > 0 && (
         <ItemRow>
-          <ItemTitle>{`actor`}</ItemTitle>
+          <ItemTitle>
+            <FormattedMessage
+              id={
+                movie.extended.actors.length > 0
+                  ? "preview.cast2"
+                  : "preview.cast"
+              }
+            />
+          </ItemTitle>
           <Item>{help(movie.extended.actors)}</Item>
         </ItemRow>
       )}
       {movie.extended.author.length > 0 && (
         <ItemRow>
-          <ItemTitle>{`author`}</ItemTitle>
+          <ItemTitle>
+            <FormattedMessage
+              id={
+                movie.extended.author.length > 0
+                  ? "preview.producer2"
+                  : "preview.producer"
+              }
+            />
+          </ItemTitle>
           <Item>{help(movie.extended.author)}</Item>
         </ItemRow>
       )}
       {movie.extended.genres.length > 0 && (
         <ItemRow>
-          <ItemTitle>{`genre`}</ItemTitle>
+          <ItemTitle>
+            <FormattedMessage
+              id={
+                movie.extended.genres.length > 0
+                  ? "preview.genre2"
+                  : "preview.genre"
+              }
+            />
+          </ItemTitle>
           <Item>{help(movie.extended.genres)}</Item>
         </ItemRow>
       )}
@@ -35,11 +60,10 @@ export default RightContent;
 
 const help = (items: string[]): string => {
   let str = "";
-  let length = 0;
   let flg = false;
-  items.map((item) => {
+  items.forEach((item) => {
     let len = item.length + 2;
-    if (length + len <= 30) {
+    if (str.length + len <= 100) {
       str += item + ", ";
     } else {
       flg = true;

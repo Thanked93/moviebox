@@ -3,6 +3,7 @@ import { ArrowButton } from "../../arrow/styles/Styles";
 
 export const Inner = styled.div<{ r: number }>`
   positon: absolute;
+  z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -10,8 +11,8 @@ export const Inner = styled.div<{ r: number }>`
   margin-bottom: 10px;
   margin-left: 5%;
   margin-right: 5%;
-  transform: translateY(-15vh);
-  margin-top: ${({ r }) => (r > 0 ? "-7vmin" : "0vmin")};
+  transform: translateY(${({ r }) => (r > 0 ? "-15vmin" : "-15vmin")});
+  margin-top: ${({ r }) => (r > 0 ? "-18vmin" : "0vmin")};
   &:hover ${ArrowButton} {
     opacity: 1;
     visibility: visible;
@@ -25,13 +26,14 @@ export const Title = styled.h2`
 `;
 
 export const InnerMovies = styled.div<{ length: number }>`
-  display: flex;
-  positon: absolute;
-
+  display: grid;
+  grid-template-columns: repeat(${({ length }) => length + 2}, 20vmin);
+  grid-gap: 5px;
   width: 90%;
   padding-left: 3%;
   padding-right: 5%;
   overflow-x: scroll;
+  height: 50vmin;
   transition: 500ms;
   scroll-behavior: smooth;
   transform: translatey(-5vmin);

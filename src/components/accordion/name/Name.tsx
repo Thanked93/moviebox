@@ -59,7 +59,7 @@ const Name: React.FC = () => {
           {error && <Label color="red">{error}</Label>}
           {success && <Label color="green">{success}</Label>}
         </Messages>
-        <SubmitButton>
+        <SubmitButton dark={true}>
           <FormattedMessage id="accordion.name.button" />
         </SubmitButton>
       </Form>

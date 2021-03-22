@@ -5,6 +5,7 @@ import { Movie } from "../../api/interfaces/Movie";
 import { AccountState } from "../../store/account/accountReducer";
 import { AddMovie, RemoveMovie } from "../../store/account/actions";
 import { Button } from "./styles/Styles";
+import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 
 interface AddButtonProps {
   movie: Movie;
@@ -18,6 +19,7 @@ const AddButton: React.FC<AddButtonProps> = ({ movie }) => {
 
   return (
     <Button
+      dark={true}
       onClick={() => {
         userMovies.includes(movie)
           ? dispatch(RemoveMovie(movie.id))
@@ -25,9 +27,23 @@ const AddButton: React.FC<AddButtonProps> = ({ movie }) => {
       }}
     >
       {userMovies.includes(movie) ? (
-        <FormattedMessage id="button.remove" />
+        <>
+          <AiOutlineMinus
+            width="100%"
+            height="100%"
+            style={{ marginRight: "5px" }}
+          />
+          <FormattedMessage id="button.remove" />
+        </>
       ) : (
-        <FormattedMessage id="button.add" />
+        <>
+          <AiOutlinePlus
+            width="100%"
+            height="100%"
+            style={{ marginRight: "5px" }}
+          />
+          <FormattedMessage id="button.add" />
+        </>
       )}
     </Button>
   );

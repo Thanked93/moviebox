@@ -36,6 +36,7 @@ export const ItemContainer = styled.div`
   flex-direction: row;
   border: 1px solid white;
   &:hover {
+    background-color: #111;
     cursor: pointer;
   }
 `;

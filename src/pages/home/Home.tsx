@@ -8,6 +8,7 @@ import Row from "../../components/row/row/Row";
 import { AccountState } from "../../store/account/accountReducer";
 import { addEntry, ClearAll } from "../../store/movie/actions";
 import { Inner, MovieInner } from "./styles/styles";
+import Error from "../Error";
 
 const Home = () => {
   const [error, setError] = useState<string>("");
@@ -32,7 +33,9 @@ const Home = () => {
         setError(response.error);
       } else {
         response.items &&
-          dispatch(addEntry(request.url, response.items, request.title));
+          dispatch(
+            addEntry(request.url, response.items, request.title, request.id)
+          );
       }
     }
     if (entries.length === 0) {
@@ -42,14 +45,14 @@ const Home = () => {
     }
   }, [setError, dispatch, entries.length, lang]);
   // if we have an error we can return error page
-  if (error) return null;
+  if (error) return <Error error={error} />;
 
   return (
     <Inner>
       <Banner />
       <MovieInner>
         {entries.map((entry: any, i: number) => {
-          if (i === 0) return <Row key={entry.url + i} rowIndex={i} />;
+          return <Row key={entry.url + i} rowIndex={i} />;
         })}
       </MovieInner>
     </Inner>

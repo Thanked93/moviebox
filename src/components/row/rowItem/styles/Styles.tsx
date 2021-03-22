@@ -13,27 +13,30 @@ export const Inner = styled.div`
   flex-direction: column;
   align-items: center;
   &:hover {
-    padding: 3px;
-    z-index: 298;
-
+    position: absolute;
+    height: 38vmin;
+    width: 35vmin;
+    margin-top: 1vmin;
+    margin-left: auto;
     cursor: pointer;
-    width: 28vmin;
     padding-top: 10px;
     background-color: #222;
-    height: 38vmin;
     display: flex;
     justify-content: center;
     padding-bottom: 2vmin;
+    z-index: 298;
   }
   &:hover ${Image} {
     transform: height 0.5s;
     height: 34vmin;
     width: 22vmin;
+    margin-top: 3vmin;
   }
 `;
 
 export const Buttons = styled.div`
   display: flex;
+  margin-top: 0.5vmin;
   justfiy-content: center;
   align-items: center;
 `;
@@ -45,6 +48,7 @@ export const Container = styled.div`
   width: 100%;
   height: 38vmin;
   padding-bottom: 5px;
+  padding-top: 5px;
 `;
 
 export const PreviewWrapper = styled.div`
@@ -54,8 +58,8 @@ export const PreviewWrapper = styled.div`
   height: 300px;
   top: 10%;
   left: 15%;
-  background-color: yellow;
 `;
+
 export const InnerW = styled.div`
   position: absolute;
   min-height: 300px;

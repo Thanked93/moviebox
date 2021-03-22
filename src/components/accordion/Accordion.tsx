@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
 import { FormattedMessage } from "react-intl";
-import { RootStateOrAny, useSelector } from "react-redux";
-import { AccountState } from "../../store/account/accountReducer";
 import Language from "./language/Language";
 import Name from "./name/Name";
 import { Container, Icon, ItemContainer, Title } from "./styles/Styles";

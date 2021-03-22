@@ -17,7 +17,7 @@ export const Inner = styled.div`
   z-index: 501;
   display: flex;
   flex-direction: column;
-  height: 800px;
+  height: auto;
   width: 60%;
   background-color: #333;
 `;
@@ -56,6 +56,7 @@ export const Contents = styled.div`
   display: flex;
   padding-right: 2%;
   padding-left: 2%;
+  transform: translateY(-4vmin);
 `;
 
 export const Error = styled.div`

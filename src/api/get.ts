@@ -1,10 +1,8 @@
-import { Movie } from "./interfaces/Movie";
 import axios from "./axios";
 import { parseResponse } from "./helper/parseResponse";
+import { Movie } from "./interfaces/Movie";
 import { PreviewResponse, Response } from "./interfaces/Response";
 import { EXTEND_ENTRY } from "./requests";
-import { parse } from "node:path";
-import { rejects } from "node:assert";
 
 export async function get(
   url: string,
@@ -17,7 +15,6 @@ export async function get(
     .get(url)
     .then((res) => {
       let fetchedMovies = res.data.results;
-      console.log(res);
       if (fetchedMovies.length > 0) {
         fetchedMovies.forEach((m: any) => {
           let item = parseResponse(m, query, extended);

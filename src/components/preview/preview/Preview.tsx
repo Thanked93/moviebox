@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import ReactDom from "react-dom";
 import { RootStateOrAny, useSelector } from "react-redux";
 import { getPreview } from "../../../api/get";
 import { Movie } from "../../../api/interfaces/Movie";
@@ -8,14 +9,8 @@ import LeftContent from "../leftContent/LeftContent";
 import Player from "../player/Player";
 import RightContent from "../rightContent/RightContent";
 import Titlebar from "../titlebar/Titlebar";
-import {
-  Container,
-  Inner,
-  Close,
-  InnerClose,
-  Contents,
-  Error,
-} from "./styles/Styles";
+import { Close, Container, Contents, Inner, InnerClose } from "./styles/Styles";
+import Error from "../../../pages/Error";
 
 interface PreviewProps {
   movie: Movie;
@@ -26,7 +21,7 @@ const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
   const lang = useSelector<RootStateOrAny, AccountState["lang"]>(
     (state) => state.accountReducer.lang
   );
-  const [preview, setPreview] = useState<Movie | null>(null);
+  const [preview, setPreview] = useState<Movie>(movie);
   const [error, setError] = useState<string>("");
 
   useEffect(() => {
@@ -35,7 +30,7 @@ const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
       res.error ? setError("Something went wrong") : setPreview(res.movie);
     }
     fetch();
-  }, [setPreview, getPreview]);
+  }, [setPreview, movie, lang]);
 
   const close = (e: any) => {
     if (e.target.className.includes("close")) {
@@ -46,15 +41,13 @@ const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
   useEffect(() => {
     window.addEventListener("click", close);
     return () => window.removeEventListener("click", close);
-  }, []);
+  });
 
-  return (
-    <Container className="close">
-      {error || !preview ? (
-        <Inner>
-          <Error>{error || "Something went wrong..."}</Error>
-        </Inner>
-      ) : (
+  if (error) return <Error error={error} />;
+
+  return ReactDom.createPortal(
+    <>
+      <Container className="close">
         <Inner>
           <Close>
             <InnerClose onClick={() => setToggle(false)}>X</InnerClose>
@@ -73,8 +66,9 @@ const Preview: React.FC<PreviewProps> = ({ movie, setToggle }) => {
             <RightContent movie={preview} />
           </Contents>
         </Inner>
-      )}
-    </Container>
+      </Container>
+    </>,
+    document.getElementById("portal")!
   );
 };
 

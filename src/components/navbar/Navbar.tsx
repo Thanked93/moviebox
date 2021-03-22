@@ -66,8 +66,9 @@ const Navbar: React.FC = () => {
         </NavItems>
       </LeftWrapper>
       <MiddleWrapper>
-        <Anchor href="#">
-          <img src={gh} alt="" />
+        <Anchor href="https://github.com/Thanked93/moviebox">
+          <img src={gh} alt="link github" />
+          <p style={{ visibility: "hidden", width: "0px" }}>github</p>
         </Anchor>
       </MiddleWrapper>
       <RightWrapper>
