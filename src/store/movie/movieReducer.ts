@@ -22,6 +22,11 @@ export const movieReducer = (
 ) => {
   switch (action.type) {
     case ADD_ENTRY: {
+      const url = action.payload ? action.payload.url : "";
+      if (url) {
+        let e = state.entries.filter((entry) => entry.url === url);
+        if (e.length > 0) return { ...state };
+      }
       return {
         ...state,
         entries: [...state.entries, action.payload],

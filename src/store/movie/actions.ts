@@ -1,6 +1,11 @@
 import { Movie } from "../../api/interfaces/Movie";
 
-type Payload = { items: Movie[]; url: string; title: string } | {};
+type Payload = {
+  items: Movie[];
+  url: string;
+  title: string;
+  id: string;
+} | null;
 
 export type Action = { type: string; payload: Payload };
 
@@ -18,5 +23,5 @@ export const addEntry = (
 export const CLEAR_ALL = "CLEAR_ALL";
 export const ClearAll = (): Action => ({
   type: CLEAR_ALL,
-  payload: {},
+  payload: null,
 });

@@ -10,6 +10,7 @@ import {
   requestsSeries,
 } from "../../api/requests";
 import Banner from "../../components/banner/Banner";
+import Loading from "../../components/loading/Loading";
 import Row from "../../components/row/row/Row";
 import { AccountState } from "../../store/account/accountReducer";
 import { addEntry, ClearAll } from "../../store/movie/actions";
@@ -43,10 +44,6 @@ const Home = () => {
   }, [lang, location.pathname, dispatch, setRequest]);
 
   useEffect(() => {
-    dispatch(ClearAll());
-  }, [lang, dispatch]);
-
-  useEffect(() => {
     async function fetch(request: Request) {
       let response: Response = await get(request.url, request.query, false);
       if (response.error) {
@@ -58,7 +55,6 @@ const Home = () => {
           );
       }
     }
-
     if (entries.length === 0) {
       request.forEach(async (r: Request) => {
         await fetch(r);
@@ -67,10 +63,11 @@ const Home = () => {
   }, [setError, dispatch, entries.length, lang, request]);
 
   if (error) return <Error error={error} />;
+  if (entries.length < 4) return <Loading />;
 
   return (
     <Inner>
-      <Banner />
+      <Banner banner={entries[0].items[0]} />
       <MovieInner>
         {entries.map((entry: any, i: number) => {
           return <Row key={entry.url + i} rowIndex={i} />;
