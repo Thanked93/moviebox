@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Inner = styled.div`
-  width: 55%;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 55%;
 `;
 
 export const ItemRow = styled.div`
@@ -16,12 +16,12 @@ export const Description = styled.p`
 `;
 
 export const Item = styled.div<{ color: string; border: boolean }>`
-  display: flex;
-  justify-content: center;
   align-items: center;
+  ${({ border }) => (border ? "border: 2px solid white" : "")};
   color: ${({ color }) => color};
   font-size: 2vmin;
-  padding-right: 1.2vmin;
+  display: flex;
+  justify-content: center;
   padding-left: 1vmin;
-  ${({ border }) => (border ? "border: 2px solid white" : "")};
+  padding-right: 1.2vmin;
 `;

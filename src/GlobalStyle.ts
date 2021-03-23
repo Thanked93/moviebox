@@ -2,12 +2,13 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     html,body {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        -vebkit-font-smoothing:antialiased;
-        -moz-osx-font-smoothing:grayscale;
         background-color:#111;
         color:#fff;
-        font-size:16px;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size:1.3vmin;
+        -vebkit-font-smoothing:antialiased;
+        margin:0;
+        -moz-osx-font-smoothing:grayscale;
     }
 
 

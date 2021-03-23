@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
 import { RootStateOrAny, useSelector } from "react-redux";
 import { Movie } from "../../../api/interfaces/Movie";
-import { movieReducer, MovieState } from "../../../store/movie/movieReducer";
+import { MovieState } from "../../../store/movie/movieReducer";
 import Arrow from "../arrow/Arrow";
 import RowItem from "../rowItem/RowItem";
 import { Inner, InnerMovies, Space, Title } from "./styles/Styles";

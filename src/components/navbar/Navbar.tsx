@@ -44,11 +44,11 @@ const Navbar: React.FC = () => {
   return (
     <Inner transparent={bgVisible}>
       <LeftWrapper>
-        <Link to="/" style={{ textDecoration: "none" }}>
+        <Link to="/home" style={{ textDecoration: "none" }}>
           <LinkLogo>MovieBox</LinkLogo>
         </Link>
         <NavItems>
-          <Link to="/" style={{ textDecoration: "none" }}>
+          <Link to="/home" style={{ textDecoration: "none" }}>
             <LinkItem current={colorize === 0}>
               <FormattedMessage id="navbar.home" />
             </LinkItem>

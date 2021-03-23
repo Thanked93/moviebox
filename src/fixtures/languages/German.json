@@ -44,5 +44,11 @@
   "home.action": "Action Filme",
   "home.comedy": "Komödien",
   "home.horror": "Horror",
-  "home.romance": "Romanzen"
+  "home.romance": "Romanzen",
+
+  "series.action": "Action Serien",
+  "series.comedy": "Comedy Serien",
+  "series.scifi": "Sci-Fi & Fantasie",
+  "series.romance": "Romatische Serien",
+  "series.documentaries": "Dokumentarserien"
 }

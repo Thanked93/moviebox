@@ -3,11 +3,11 @@ import styled from "styled-components";
 export const Inner = styled.div`
   display: flex;
   flex-direction: column;
+  height: 100%;
   margin-left: 50px;
   margin-right: 50px;
   margin-top: 60px;
   padding-bottom: 50px;
-  height: 100%;
 `;
 
 export const Result = styled.div`
@@ -21,7 +21,7 @@ export const Term = styled.span`
 `;
 
 export const InnerMovies = styled.div`
-  width: 100%;
-  margin-top: 20px;
   height: auto;
+  margin-top: 20px;
+  width: 100%;
 `;

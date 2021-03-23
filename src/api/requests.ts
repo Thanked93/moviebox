@@ -7,7 +7,7 @@ export interface Request {
   title: string;
 }
 
-export const NETFLIX_ORIGINALS = (lang: string) => {
+export const netflix = (lang: string) => {
   return {
     query: "tv",
     id: "home.netflixoriginals",
@@ -15,7 +15,7 @@ export const NETFLIX_ORIGINALS = (lang: string) => {
     url: `/discover/tv?api_key=${KEY}&language=${lang}&with_networks=213`,
   };
 };
-const TOP_RATED = (lang: string) => {
+const topRated = (lang: string) => {
   return {
     query: "movie",
     id: "home.toprated",
@@ -24,7 +24,7 @@ const TOP_RATED = (lang: string) => {
   };
 };
 
-export const ACTION_MOVIES = (lang: string) => {
+export const action = (lang: string) => {
   return {
     query: "movie",
     id: "home.action",
@@ -32,7 +32,7 @@ export const ACTION_MOVIES = (lang: string) => {
     url: `/discover/movie?api_key=${KEY}&language=${lang}&with_genres=28`,
   };
 };
-export const COMEDY_MOVIES = (lang: string) => {
+export const comedy = (lang: string) => {
   return {
     query: "movie",
     title: "Comedy Movies",
@@ -40,30 +40,30 @@ export const COMEDY_MOVIES = (lang: string) => {
     id: "home.comedy",
   };
 };
-export const HORROR_MOVIES = (lang: string) => {
+export const horror = (lang: string) => {
   return {
     query: "movie",
     title: "Horror Movies",
-    url: `/discover/movie?api_key=${KEY}&language=${lang}&with_genres=27`,
+    url: `/discover/movie?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=27`,
     id: "home.horror",
   };
 };
 
-export const ROMANCE_MOVIES = (lang: string) => {
+export const romance = (lang: string) => {
   return {
     query: "movie",
     title: "Romances",
     id: "home.romance",
-    url: `/discover/movie?api_key=${KEY}&language=${lang}&with_genres=10749`,
+    url: `/discover/movie?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=10749`,
   };
 };
 
-export const DOCUMENTARY_MOVIES = (lang: string) => {
+export const documentary = (lang: string) => {
   return {
     query: "movie",
     id: "home.documentaries",
     title: "Documentaries",
-    url: `/discover/movie?api_key=${KEY}&language=${lang}&with_genres=99`,
+    url: `/discover/movie?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=99`,
   };
 };
 export const EXTEND_ENTRY = (lang: string) => {
@@ -73,14 +73,80 @@ export const EXTEND_ENTRY = (lang: string) => {
 
 export const requests = (lang: string) => {
   return [
-    NETFLIX_ORIGINALS(lang),
-    TOP_RATED(lang),
-    COMEDY_MOVIES(lang),
-    ACTION_MOVIES(lang),
-    HORROR_MOVIES(lang),
-    ROMANCE_MOVIES(lang),
-    DOCUMENTARY_MOVIES(lang),
+    netflix(lang),
+    topRated(lang),
+    comedy(lang),
+    action(lang),
+    horror(lang),
+    romance(lang),
+    documentary(lang),
   ];
 };
+
+export const documentariesSeries = (lang: string) => {
+  return {
+    query: "tv",
+    id: "series.documentaries",
+    title: "Documentaries",
+    url: `/discover/tv?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=99`,
+  };
+};
+
+export const scifiSeries = (lang: string) => {
+  return {
+    query: "tv",
+    id: "series.scifi",
+    title: "horror",
+    url: `/discover/tv?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=10765`,
+  };
+};
+
+export const actionSeries = (lang: string) => {
+  return {
+    query: "tv",
+    id: "series.action",
+    title: "Action",
+    url: `/discover/tv?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=10759`,
+  };
+};
+
+export const comedySeries = (lang: string) => {
+  return {
+    query: "tv",
+    id: "series.comedy",
+    title: "Comedy",
+    url: `/discover/tv?api_key=${KEY}&language=${lang}&sort_by=popularity.desc&with_genres=35`,
+  };
+};
+
+export const romanceSeries = (lang: string) => {
+  return {
+    query: "tv",
+    id: "series.romance",
+    title: "Romance",
+    url: `/discover/tv?api_key=${KEY}&language=${lang}&with_genres=10749`,
+  };
+};
+
+export const requestsSeries = (lang: string) => {
+  return [
+    scifiSeries(lang),
+    actionSeries(lang),
+    romanceSeries(lang),
+    documentariesSeries(lang),
+    comedySeries(lang),
+  ];
+};
+
+export const requestMovies = (lang: string) => {
+  return [
+    topRated(lang),
+    horror(lang),
+    comedy(lang),
+    action(lang),
+    romance(lang),
+  ];
+};
+
 export const SEARCH_MOVIE = `/search/movie?api_key=${KEY}`;
 export const SEARCH_TV = `/search/tv?api_key=${KEY}&query=`;

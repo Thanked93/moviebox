@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from "react";
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { useLocation } from "react-router";
 import { get } from "../../api/get";
 import { Response } from "../../api/interfaces/Response";
-import { Request, requests } from "../../api/requests";
+import {
+  Request,
+  requestMovies,
+  requests,
+  requestsSeries,
+} from "../../api/requests";
 import Banner from "../../components/banner/Banner";
 import Row from "../../components/row/row/Row";
 import { AccountState } from "../../store/account/accountReducer";
 import { addEntry, ClearAll } from "../../store/movie/actions";
-import { Inner, MovieInner } from "./styles/styles";
 import Error from "../Error";
+import { Inner, MovieInner } from "./styles/styles";
 
 const Home = () => {
+  const location = useLocation();
   const [error, setError] = useState<string>("");
   const entries = useSelector<any, any>((state) => {
     return state.movieReducer.entries;
@@ -21,6 +28,19 @@ const Home = () => {
   );
 
   const dispatch = useDispatch();
+  const [request, setRequest] = useState<Request[]>(requests(lang));
+
+  useEffect(() => {
+    dispatch(ClearAll());
+    let dir = location.pathname;
+    if (dir.includes("movies")) {
+      setRequest(requestMovies(lang));
+    } else if (dir.includes("series")) {
+      setRequest(requestsSeries(lang));
+    } else {
+      setRequest(requests(lang));
+    }
+  }, [lang, location.pathname, dispatch, setRequest]);
 
   useEffect(() => {
     dispatch(ClearAll());
@@ -38,13 +58,14 @@ const Home = () => {
           );
       }
     }
+
     if (entries.length === 0) {
-      requests(lang).forEach(async (r: Request) => {
+      request.forEach(async (r: Request) => {
         await fetch(r);
       });
     }
-  }, [setError, dispatch, entries.length, lang]);
-  // if we have an error we can return error page
+  }, [setError, dispatch, entries.length, lang, request]);
+
   if (error) return <Error error={error} />;
 
   return (

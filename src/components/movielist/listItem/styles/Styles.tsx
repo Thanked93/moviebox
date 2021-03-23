@@ -6,44 +6,45 @@ export const Image = styled.img`
 `;
 
 export const Container = styled.div`
-  position: absolute;
-  height: 30vmin;
-  width: 20vmin;
-  z-index: 297;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 30vmin;
+  position: absolute;
+  width: 20vmin;
+  z-index: 297;
 `;
 
 export const Buttons = styled.div`
+  align-items: center;
   display: flex;
   justfiy-content: center;
-  align-items: center;
   margin-top: 0.5vmin;
 `;
 
 export const Inner = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: flex;
   height: 38vmin;
+  justify-content: center;
   padding-bottom: 5px;
+  width: 100%;
   &:hover ${Container} {
-    padding: 3px;
-    z-index: 298;
-    cursor: pointer;
-    width: 25vmin;
     background-color: #222;
-    height: 38vmin;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
     display: flex;
+    height: 38vmin;
     justify-content: center;
+    padding: 3px;
     padding-bottom: 5px;
+    width: 25vmin;
+    z-index: 298;
   }
 
   &:hover ${Image} {
-    transform: height 0.5s;
     height: 34vmin;
+    transform: height 0.5s;
     width: 22vmin;
   }
 `;

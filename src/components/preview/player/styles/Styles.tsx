@@ -1,18 +1,18 @@
 import styled from "styled-components";
 
 export const Inner = styled.div`
-  height: 30vmin;
-  width: 100%;
   background-color: black;
-  padding-bottom: 1vmin;
   display: flex;
+  height: 30vmin;
   justify-content: center;
+  padding-bottom: 1vmin;
+  width: 100%;
 `;
 
 export const Image = styled.img`
-  width: 96%;
-  height: 100%;
   background-color: #000;
+  height: 100%;
   object-fit: contain;
   padding: 2%;
+  width: 96%;
 `;

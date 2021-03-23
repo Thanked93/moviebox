@@ -8,16 +8,16 @@ export const Button = styled.button<{ dark: boolean }>`
   border-radius: 0.2vw;
   color: ${({ dark }) => (dark ? "#e6e6e6" : "black")};
   display: flex;
-  margin-right: 1vmin;
+  font-size: 1.3vmin;
   font-weight: 700;
+  margin-right: 1vmin;
+  outline: none;
   padding-left: 2vmin;
   padding-right: 2vmin;
   padding-top: 1vmin;
   padding-bottom: 1vmin;
   height: 3vmin;
   width: auto;
-  font-size: 1.3vmin;
-  outline: none;
   &:hover {
     background-color: ${({ dark }) =>
       dark ? " rgba(91, 91, 91, .8)" : "rgba(180,180,180,.7)"};

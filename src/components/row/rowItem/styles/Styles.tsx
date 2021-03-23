@@ -6,67 +6,69 @@ export const Image = styled.img`
 `;
 
 export const Inner = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   height: 30vmin;
   width: 20vmin;
   z-index: 297;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   &:hover {
-    position: absolute;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    display: flex;
     height: 38vmin;
-    width: 35vmin;
+    justify-content: center;
     margin-top: 1vmin;
     margin-left: auto;
-    cursor: pointer;
-    padding-top: 10px;
-    background-color: #222;
-    display: flex;
-    justify-content: center;
     padding-bottom: 2vmin;
+    padding-top: 10px;
+    position: absolute;
+    width: 35vmin;
     z-index: 298;
   }
   &:hover ${Image} {
-    transform: height 0.5s;
     height: 34vmin;
-    width: 22vmin;
     margin-top: 3vmin;
+    width: 22vmin;
+    transform: height 0.5s;
   }
 `;
 
 export const Buttons = styled.div`
-  display: flex;
-  margin-top: 0.5vmin;
-  justfiy-content: center;
   align-items: center;
+  display: flex;
+  justfiy-content: center;
+  margin-top: 0.5vmin;
 `;
 
 export const Container = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  display: flex;
   height: 38vmin;
+  justify-content: center;
   padding-bottom: 5px;
   padding-top: 5px;
+  width: 100%;
 `;
 
 export const PreviewWrapper = styled.div`
-  position: fixed;
-  z-index: 300;
-  width: 100%;
-  height: 300px;
-  top: 10%;
   left: 15%;
+  height: 300px;
+  position: fixed;
+  top: 10%;
+  width: 100%;
+  z-index: 300;
 `;
 
 export const InnerW = styled.div`
-  position: absolute;
-  min-height: 300px;
-  top: 0;
-  height: 100vh;
-  width: 20vw;
-  z-index: 301;
   background-color: #1c1c1c;
   color: white;
+  height: 100vh;
+  min-height: 300px;
+  position: absolute;
+  top: 0;
+  width: 20vw;
+  z-index: 301;
 `;

@@ -36,7 +36,6 @@ export async function getPreview(
   await axios
     .get(`/${movie.query}/${movie.id}?${EXTEND_ENTRY(lang)}`)
     .then((res) => {
-      console.log(res);
       let item = parseResponse(res.data, movie.query, true);
       if (item) preview = item;
     })

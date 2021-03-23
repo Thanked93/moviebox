@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FormattedMessage } from "react-intl";
-import { useDispatch } from "react-redux";
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux";
+import { AccountState } from "../../../store/account/accountReducer";
 import { ChangeName } from "../../../store/account/actions";
 import {
   Inner,
@@ -16,7 +17,9 @@ const Name: React.FC = () => {
   const [username, setUsername] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState<string>("");
-
+  const lang = useSelector<RootStateOrAny, AccountState["lang"]>(
+    (state) => state.accountReducer.lang
+  );
   const dispatch = useDispatch();
 
   //Check for only letters
@@ -26,7 +29,9 @@ const Name: React.FC = () => {
       setUsername(uname);
       setError("");
     } else {
-      setError("Only letters are allowed");
+      setError(
+        lang === "en-US" ? "Only letters are allowed" : "Nur Buchstaben erlaubt"
+      );
     }
   };
 
@@ -34,12 +39,20 @@ const Name: React.FC = () => {
     e.preventDefault();
     if (username.length < 2) {
       setSuccess("");
-      setError("Your username is too short.");
+      setError(
+        lang === "en-US"
+          ? "Your username is too short."
+          : "Der Name ist zu kurz"
+      );
     }
     if (!error) {
       dispatch(ChangeName(username));
       setError("");
-      setSuccess("Your name has been changed.");
+      setSuccess(
+        lang === "en-US"
+          ? "Your name has been changed"
+          : "Dein Name wurde geändert"
+      );
     }
   };
 

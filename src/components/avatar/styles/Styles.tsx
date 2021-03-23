@@ -52,14 +52,14 @@ export const Line = styled.div`
 `;
 
 export const MenuMe = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: row;
   height: 5vmin;
-  width: 19vmin;
+  padding-bottom: 0.5vmin;
   padding-left: 1vmin;
   padding-top: 0.5vmin;
-  padding-bottom: 0.5vmin;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+  width: 19vmin;
   &:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);
@@ -67,9 +67,9 @@ export const MenuMe = styled.div`
 `;
 
 export const Me = styled.img`
+  margin-right: 10px;
   height: 3vmin;
   width: 3vmin;
-  margin-right: 10px;
 `;
 
 export const MeDesc = styled.div`
@@ -78,14 +78,14 @@ export const MeDesc = styled.div`
 `;
 
 export const MenuItem = styled.div`
-  text-decoration: 0;
-  width: 19vmin;
-  font-size: 1.9vmin;
-  color: white;
   display: flex;
-  padding-top: 1vmin;
+  color: white;
+  font-size: 1.9vmin;
+  text-decoration: 0;
   padding-bottom: 1vmin;
   padding-left: 1vmin;
+  padding-top: 1vmin;
+  width: 19vmin;
   &:hover {
     cursor: pointer;
     background-color: rgba(255, 255, 255, 0.1);

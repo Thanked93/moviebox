@@ -20,7 +20,7 @@ const Profile = () => {
         <Message>
           <FormattedMessage id="profile.sub2" />
         </Message>
-        <Link to={"/"} style={{ textDecoration: "none" }}>
+        <Link to={"/home"} style={{ textDecoration: "none" }}>
           <BackButton dark={true}>
             <FormattedMessage id="profile.button" />
           </BackButton>

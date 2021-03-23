@@ -1,42 +1,40 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: flex;
-  width: 60vmin;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
   background-color: #222;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  width: 60vmin;
 `;
 
 export const Item = styled.div``;
 
 export const Icon = styled.div`
-  width: 5vmin;
+  align-items: center;
+  display: flex;
+  font-size: 3vmin;
   height: auto;
+  justify-content: center;
   margin-right: 10px;
   margin-left: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3vmin;
+  width: 5vmin;
 `;
 
 export const Title = styled.h2`
-  padding-left: 1vmin;
   font-size: 2.5vmin;
+  padding-left: 1vmin;
 `;
 
 export const ItemContainer = styled.div`
-  height: 7vmin;
-  width: 100%;
+  border: 1px solid white;
   display: flex;
   flex-direction: row;
-  border: 1px solid white;
+  height: 7vmin;
+  width: 100%;
   &:hover {
-    background-color: #111;
+    background: rgba(180, 180, 180, 0.4);
     cursor: pointer;
   }
 `;

@@ -39,10 +39,15 @@
   "preview.producer2": "producers:",
 
   "home.netflixoriginals": "Netflix Originals",
-  "home.documentaries": "Dokumentationen",
+  "home.documentaries": "Documentaries",
   "home.toprated": "Top rated",
   "home.action": "Action",
   "home.comedy": "Comedy",
   "home.horror": "Horror",
-  "home.romance": "Romances"
+  "home.romance": "Romances",
+  "series.action": "Action series",
+  "series.comedy": "Comedy series",
+  "series.scifi": "Sci-Fi & Fantasy",
+  "series.romance": "Romantic series",
+  "series.documentaries": "Documentary"
 }

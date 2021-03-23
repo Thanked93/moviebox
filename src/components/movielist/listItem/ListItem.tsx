@@ -19,11 +19,12 @@ const ListItem: React.FC<ListItemProps> = ({ movie }) => {
     <>
       {show && <Preview movie={movie} setToggle={setShow} />}
       <Inner onMouseLeave={() => setEnter(false)}>
-        <Container
-          onMouseOver={() => setEnter(true)}
-          onClick={() => setShow(true)}
-        >
-          <Image src={`${urls.imageUrl}${movie.image}`} alt="" />
+        <Container onMouseOver={() => setEnter(true)}>
+          <Image
+            src={`${urls.imageUrl}${movie.image}`}
+            alt=""
+            onClick={() => setShow(true)}
+          />
           {enter && (
             <Buttons>
               <ShowButton toggle={setShow} />

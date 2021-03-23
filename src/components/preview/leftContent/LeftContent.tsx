@@ -37,7 +37,7 @@ export const LeftContent: React.FC<LeftContentProps> = ({ movie }) => {
           </Item>
         )}
       </ItemRow>
-      <Description>{movie.overview}</Description>
+      <Description>{movie.overview.substr(0, 1300)}</Description>
     </Inner>
   );
 };
