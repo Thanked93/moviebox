@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { BsChevronCompactDown, BsChevronCompactUp } from "react-icons/bs";
 import { FormattedMessage } from "react-intl";
+import { RootStateOrAny, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { AccountState } from "../../store/account/accountReducer";
 import {
   Icon,
   Image,
@@ -17,7 +19,9 @@ import {
 
 const Avatar = () => {
   const [toggle, setToggle] = useState<boolean>(false);
-
+  const name = useSelector<RootStateOrAny, AccountState["name"]>(
+    (state) => state.accountReducer.name
+  );
   return (
     <Inner>
       <Image
@@ -42,7 +46,7 @@ const Avatar = () => {
                   src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                   alt=""
                 />
-                <MeDesc>Guest</MeDesc>
+                <MeDesc>{name}</MeDesc>
               </MenuMe>
             </Link>
             <Line />

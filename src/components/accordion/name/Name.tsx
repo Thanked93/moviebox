@@ -48,6 +48,7 @@ const Name: React.FC = () => {
     if (!error) {
       dispatch(ChangeName(username));
       setError("");
+      setUsername("");
       setSuccess(
         lang === "en-US"
           ? "Your name has been changed"
@@ -64,6 +65,7 @@ const Name: React.FC = () => {
       <Form onSubmit={submit}>
         <Input
           type="text"
+          value={username}
           onChange={(e) => handleChange(e.target.value)}
           minLength={2}
           maxLength={15}
